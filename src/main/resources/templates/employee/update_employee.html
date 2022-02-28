@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.themyleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Employee Management System</title>
+    <!-- Bootstrap CSS from webjars -->
+    <link rel='stylesheet' th:href="@{/webjars/bootstrap/4.6.1/css/bootstrap.min.css}">
+    <!-- Jquery 3.6.0 from webjars -->
+    <script defer th:src="@{/webjars/jquery/jquery.slim.js}"></script>
+    <!-- Bootstrap JS Bundle with Popper from webjars -->
+    <script defer th:src="@{/webjars/bootstrap/4.6.1/js/bootstrap.bundle.min.js}"></script>
+</head>
+<body>
+<div class="container">
+    <h1> Employee Management System </h1>
+    <hr>
+    <h2> Update Employee</h2>
+    <form action="#" th:action="@{/saveEmployee}" th:object="${employee}" method="post">
+
+        <!-- Add hidden form field to handle update -->
+        <input type="hidden" th:field="*{id}" name="hidden" id="hidden">
+        <input type="text" th:field="*{firstName}" name="firstname" id="firstname"
+               class="form-control mb-4 col-4">
+        <input type="text" th:field="*{lastName}" name="lastname" id="lastname"
+               class="form-control mb-4 col-4">
+        <input type="email" th:field="*{email}" name="email" id="email"
+               class="form-control mb-4 col-4">
+
+        <input type="submit" class="btn btn-info col-2" value="Update Employee">
+    </form>
+    <hr>
+    <a th:href="@{/}"> Back to Employee List</a>
+</div>
+
+</body>
+</html>
