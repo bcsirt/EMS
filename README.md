@@ -1,2 +1,2 @@
 # EMS
-Employye Management System
+Employee Management System
